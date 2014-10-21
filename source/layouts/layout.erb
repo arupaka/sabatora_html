@@ -10,11 +10,19 @@
     <title><%= current_page.data.title || "The Middleman" %></title>
     
     <!-- ここに追加したCSSシートを書いてく↓ -->
-    <%= stylesheet_link_tag "all" %>
+    <%= stylesheet_link_tag "normalize", "all" %>
     <%= javascript_include_tag  "all" %>
   </head>
   
+<!--  <body class="<%= page_classes %>"> -->
   <body>
+<<<<<<< HEAD
+    <div class="docs-header">
+      <%= partial "/partial/top_menu" %>
+    </div>
+    <%= yield %>
+    <%= partial "/partial/footer_menu" %>
+=======
 
    <div class="docs-header">
       <!--nav-->
@@ -198,5 +206,6 @@
 
     </script>
   
+>>>>>>> 632db24d042cacb0efa138b7e1682de810e8169e
   </body>
 </html>
