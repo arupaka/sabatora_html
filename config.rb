@@ -3,9 +3,9 @@
 ###
 
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+compass_config do |config|
+  config.output_style = :compact
+end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -52,7 +52,7 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
-set :bower_dir, 'bower_components'
+
 
 # Build-specific configuration
 configure :build do
@@ -70,9 +70,9 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+
 end
 
-sass_dir = 'source/stylesheets', 'bower_components'
 
 after_configuration do
     # @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
