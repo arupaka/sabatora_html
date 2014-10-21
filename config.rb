@@ -8,7 +8,7 @@ activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   blog.prefix = "blog"
 
-  blog.permalink = "blog/{year}/{month}/{day}/{title}.html"
+  blog.permalink = "{year}/{month}/{day}/{title}.html"
   # Matcher for blog source files
   # blog.sources = "{year}-{month}-{day}-{title}.html"
   # blog.taglink = "tags/{tag}.html"
@@ -53,10 +53,7 @@ page "/feed.xml", layout: false
 # page "/path/to/file.html", layout: :otherlayout
 #
 # A path which all have the same layout
-# with_layout :admin do
-#   page "/admin/*"
-# end
-
+page "/blog.html", :layout => "blog"
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
@@ -67,6 +64,8 @@ page "/feed.xml", layout: false
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
+activate :directory_indexes
+
 
 # Reload the browser automatically whenever files change
 # activate :livereload
@@ -83,6 +82,8 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
+
+
 
 # Build-specific configuration
 configure :build do
