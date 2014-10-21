@@ -1,8 +1,9 @@
 /*
  *= require "Bootflat/css/bootstrap.min"
- *= require "Bootflat/css/site.min"
  */
 
 
 @charset "utf-8";
 
+@import "Bootflat/css/site";
+@import "font-awesome/scss/font-awesome";

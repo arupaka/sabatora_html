@@ -15,6 +15,7 @@
   ],
   "dependencies": {
     "jquery": "~2.1.1",
-    "Bootflat": "~2.0.4"
+    "Bootflat": "~2.0.4",
+    "font-awesome": "~4.0.3"
   }
 }
