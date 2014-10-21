@@ -84,6 +84,14 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
 
+## s3
+
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket                     = 'help.sabatora.org' # The name of the S3 bucket you are targetting. This is globally unique.
+  s3_sync.region                     = 'ap-northeast-1'     # The AWS region for your bucket.
+  s3_sync.aws_access_key_id          = ENV['AWS_ACCESS_KEY_ID']
+  s3_sync.aws_secret_access_key      = ENV['AWS_SECRET_KEY']
+end
 
 # Build-specific configuration
 configure :build do
