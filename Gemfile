@@ -24,5 +24,5 @@ gem "nokogiri"
 gem "redcarpet" 
 
 
-
+gem 'middleman-s3_sync'
 
