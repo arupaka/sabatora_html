@@ -18,5 +18,8 @@ gem 'compass'
 
 gem 'susy'
 
+gem "nokogiri"  # 追加
+gem "redcarpet" # 追加
+
 
 

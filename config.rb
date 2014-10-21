@@ -3,9 +3,11 @@
 ###
 require 'susy'
 # Change Compass configuration
+
   compass_config do |config|
     config.sass_options = {:debug_info => true}
   end
+
 
 ###
 # Page options, layouts, aliases and proxies
@@ -58,8 +60,11 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
+set :fonts_dir,  "fonts"
+
 # Reload the browser automatically whenever files change
 activate :livereload
+
 
 
 # Build-specific configuration
@@ -78,12 +83,24 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+
 end
 
 after_configuration do
-  @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
-  Dir.glob(File.join("#{root}", @bower_config["directory"], "*", "fonts")) do |f|
-    sprockets.append_path f
+  bowerrc = JSON.parse File.read(File.join "#{root}", '.bowerrc')
+  bower_dir = bowerrc['directory']
+  sprockets.append_path File.join("#{root}", bower_dir)
+
+  Dir.glob File.join "#{root}", bower_dir, '**/*', '{bower,component,.bower}.json' do |f|
+    bower = JSON.parse File.read(f), create_additions: false
+    dirname = File.dirname f
+    case bower['main']
+    when String
+      sprockets.append_path File.dirname(File.join(dirname, bower['main']))
+    when Array
+      bower['main'].each do |name|
+        sprockets.append_path File.dirname(File.join(dirname, name))
+      end
+    end
   end
-  sprockets.append_path File.join "#{root}", @bower_config["directory"]
 end
