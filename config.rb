@@ -1,11 +1,11 @@
 ###
 # Compass
 ###
-
+require 'susy'
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+  compass_config do |config|
+    config.sass_options = {:debug_info => true}
+  end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -47,34 +47,43 @@
 #   end
 # end
 
+# Markdown settings 
+set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, :with_toc_data => true
+set :markdown_engine, :redcarpet
+
+
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
-set :bower_dir, 'bower_components'
+
+# Reload the browser automatically whenever files change
+activate :livereload
+
 
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
   # activate :asset_hash
 
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
 
-sass_dir = 'source/stylesheets', 'bower_components'
-
 after_configuration do
-    # @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
-    sprockets.append_path File.join "#{root}", "bower_components"
+  @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
+  Dir.glob(File.join("#{root}", @bower_config["directory"], "*", "fonts")) do |f|
+    sprockets.append_path f
+  end
+  sprockets.append_path File.join "#{root}", @bower_config["directory"]
 end
