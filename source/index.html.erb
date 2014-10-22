@@ -1,86 +1,72 @@
 ---
+title: さばとらほーむぺーじ
 pageable: true
 per_page: 10
 ---
-<% if paginate && num_pages > 1 %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
 
-
-<div class="topic">
-        <div class="container">
-			<div class="col-md-8">
-			  <h3>Color Picker</h3>
-			  <h4>Bootflat Flat UI color picker is a project digging the Flat Color Picker which gives you the perfect colors for flat designs</h4>
-			</div>
-			<div class="col-md-4">
-			  <div class="advertisement">
-<script async type="text/javascript" src="//cdn.adpacks.com/adpacks.js?zoneid=1386&serve=C6SI42Y&placement=bootflat" id="_adpacks_js"></script>
-			  </div>
-			</div>
-        </div>
-        <div class="topic__infos">
-          <div class="container color-picker-nav">
-			<a href="color-picker.html">All</a> 
-			<a href="color-picker-red.html">Red</a> 
-			<a class="current" href="color-picker-pink.html">Pink</a> 
-			<a href="color-picker-purple.html">Purple</a> 
-			<a href="color-picker-blue.html">Blue</a> 
-			<a href="color-picker-green.html">Green</a> 
-			<a href="color-picker-yellow.html">Yellow</a> 
-			<a href="color-picker-gray.html">Gray</a>
-          </div>
-        </div>
+<div class="topic main_header">
+    <div class="container">
+		<div class="col-md-12">
+		  <%= image_tag 'sabatora.png', :class=>"img-responsive center-block" %>
+		  <h1 class="text-center">Sabatora</h1>
+		  <p class="text-center">Online Session Tool</p>
+		</div>
+    </div>
+    <div class="topic__infos">
+      <div class="container color-picker-nav">
       </div>
     </div>
-    <!--documents-->
-    <div class="color-wrap clearfix">
+</div>
+
+<!--documents-->
+<div class="color-wrap clearfix">
+	<div class="color-picker">
+		<div class="color-item" style="background-color:#F08F90;">
+			<span class="color-name">One kin dye</span><br>
+			<span class="hex-number">#F08F907</span><br>
+		</div>
+	</div>
+	<div class="color-picker">
+		<div class="color-item" style="background-color:#F47983;">
+			<span class="color-name">Peach-colored</span><br>
+			<span class="hex-number">#F47983</span><br>
+		</div>
+	</div>
 		<div class="color-picker">
-			<div class="color-item" style="background-color:#F08F90;">
-				<span class="color-name">One kin dye</span><br>
-				<span class="hex-number">#F08F907</span><br>
-			</div>
+		<div class="color-item" style="background-color:#DB5A6B;">
+			<span class="color-name">Red plum colored</span><br>
+			<span class="hex-number">#DB5A6B</span><br>
 		</div>
+	</div>
 		<div class="color-picker">
-			<div class="color-item" style="background-color:#F47983;">
-				<span class="color-name">Peach-colored</span><br>
-				<span class="hex-number">#F47983</span><br>
-			</div>
+		<div class="color-item" style="background-color:#C93756;">
+			<span class="color-name">Medium crimson</span><br>
+			<span class="hex-number">#C93756</span><br>
 		</div>
- 		<div class="color-picker">
-			<div class="color-item" style="background-color:#DB5A6B;">
-				<span class="color-name">Red plum colored</span><br>
-				<span class="hex-number">#DB5A6B</span><br>
-			</div>
-		</div>
- 		<div class="color-picker">
-			<div class="color-item" style="background-color:#C93756;">
-				<span class="color-name">Medium crimson</span><br>
-				<span class="hex-number">#C93756</span><br>
-			</div>
-		</div>
- 		<div class="color-picker">
-			<div class="color-item" style="background-color:#FCC9B9;">
-				<span class="color-name">Cherry blossom color</span><br>
-				<span class="hex-number">#FCC9B9</span><br>
-			</div>
-		</div>
+	</div>
 		<div class="color-picker">
-			<div class="color-item" style="background-color:#FFB3A7;">
-				<span class="color-name">Washed-out crimson</span><br>
-				<span class="hex-number">#FFB3A7</span><br>
-			</div>
+		<div class="color-item" style="background-color:#FCC9B9;">
+			<span class="color-name">Cherry blossom color</span><br>
+			<span class="hex-number">#FCC9B9</span><br>
 		</div>
- 		<div class="color-picker">
-			<div class="color-item" style="background-color:#F62459;">
-				<span class="color-name">RADICAL RED</span><br>
-				<span class="hex-number">#F62459</span><br>
-			</div>
+	</div>
+	<div class="color-picker">
+		<div class="color-item" style="background-color:#FFB3A7;">
+			<span class="color-name">Washed-out crimson</span><br>
+			<span class="hex-number">#FFB3A7</span><br>
 		</div>
- 		<div class="color-picker">
-			<div class="color-item" style="background-color:#F58F84;">
-				<span class="color-name">Ibis wing color</span><br>
-				<span class="hex-number">#F58F84</span><br>
-			</div>
+	</div>
+		<div class="color-picker">
+		<div class="color-item" style="background-color:#F62459;">
+			<span class="color-name">RADICAL RED</span><br>
+			<span class="hex-number">#F62459</span><br>
 		</div>
-    </div>
+	</div>
+		<div class="color-picker">
+		<div class="color-item" style="background-color:#F58F84;">
+			<span class="color-name">Ibis wing color</span><br>
+			<span class="hex-number">#F58F84</span><br>
+		</div>
+	</div>
+</div>
 
